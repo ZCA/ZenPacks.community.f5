@@ -2,7 +2,7 @@
 Gather F5 LTM Virtual Server Information
 
 @author: David Petzel
-@contact: david.petzel@disney.com
+@contact: davidpetzel@gmail.com
 @date: 05/06/2011
 
 """
