@@ -7,3 +7,4 @@ setuptools*
 *.egg-info
 *dist
 .pydevproject
+.project
