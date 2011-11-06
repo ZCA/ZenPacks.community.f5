@@ -2,7 +2,6 @@
 Gather F5 BIG-IP hardware model + serial number and other hardware information
 
 @author: David Petzel
-@contact: davidpetzel@gmail.com
 @date: 05/06/2011
 
 """

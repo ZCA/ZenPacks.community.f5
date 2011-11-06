@@ -2,7 +2,6 @@
 Gather F5 LTM Virtual Server Information
 
 @author: David Petzel
-@contact: davidpetzel@gmail.com
 @date: 05/06/2011
 
 """
