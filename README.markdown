@@ -12,7 +12,7 @@ installing as well as feedback.
 
 ## Components
 The ZenPack has the following:  
- * /Network/f5 Device Class  
+ *  /Network/f5 Device Class  
  *  A Device template which graphs many of the same performance stats as would   
  	be seen in the Overview >> Performance section of the 10.x UI  
  *  Virtual servers are represented as components of the device, and like all 
