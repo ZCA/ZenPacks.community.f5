@@ -76,7 +76,6 @@ class BigipDeviceMap(SnmpPlugin):
     def process(self, device, results, log):
         """collect snmp information from this device"""
         log.info('processing %s for device %s', self.name(), device.id)
-        print results
         getdata, tabledata = results
         #if getdata['setHWProductKey'] is None: return None
         om = self.objectMap(getdata)
