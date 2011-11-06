@@ -11,13 +11,17 @@ installing as well as feedback.
 ![Virtual Server Components](https://github.com/zenoss/ZenPacks.community.f5/raw/master/screenshots/zenoss_bigip_vs_component.png)
 
 ## Components
-The ZenPack has the following:  
+The ZenPack has the following: 
 
- * Network/f5 Device Class
- * A Device template which graphs many of the same performance stats as would be seen in the Overview >> Performance section of the 10.x UI
- * Virtual servers are represented as components of the device, and like all components are automatically discovered when the device is modeled.
- * A component template for virtual servers.  
- * Virtual Server filtering. This pack adds a new zProperty, *zF5BigipVirtualServerNameFilter*, which when set will limit which virtual servers are included during a modeling event.  
+ *  /Network/f5 Device Class
+ *  A Device template which graphs many of the same performance stats as 
+ 	would be seen in the Overview >> Performance section of the 10.x UI
+ *  Virtual servers are represented as components of the device, and like all 
+ 	components are automatically discovered when the device is modeled.
+ *  A component template for virtual servers.  
+ *  Virtual Server filtering. This pack adds a new zProperty, 
+ 	*zF5BigipVirtualServerNameFilter*, which when set will limit which virtual 
+ 	servers are included during a modeling event.  
 
 ## Requirements
  * Zenoss Versions Supported: 3.0+
