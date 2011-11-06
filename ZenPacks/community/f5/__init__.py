@@ -28,7 +28,8 @@ class ZenPack(ZenPackBase):
         f5.setZenProperty('zSnmpVer', 'v2c')
         
         # Build a list of modeler plugins that we want to apply to our new device class
-        plugins=['BigipLtmVirtualServerMap', 'BigipDeviceMap']
+        plugins=['zenoss.snmp.DeviceMap', 'zenoss.snmp.NewDeviceMap',
+                 'BigipLtmVirtualServerMap', 'BigipDeviceMap']
         
         # Apply the list of plugins to the device class. This will overwrite whats there, not append
         f5.setZenProperty('zCollectorPlugins', plugins)
