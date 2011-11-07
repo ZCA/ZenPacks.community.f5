@@ -112,18 +112,34 @@ class BigipDeviceMap(SnmpPlugin):
                 device_model = "bigipVE"
             elif om.setHWProductKey == "Z99":
                 device_model = "bigipVE - Trial Edition"
+            #To make things more fun, there is an issue on Viprions.
+            #http://support.f5.com/kb/en-us/solutions/public/10000/600/sol10635.html
+            #http://support.f5.com/kb/en-us/solutions/public/11000/400/sol11441.html
+            # This results in om.setHWProductKey and om.sysObjectID coming back as 
+            #unknown....Lets try to work around that
+            elif om.setHWProductKey == "unknown":
+                #These numbers are from the second link above
+                viprion_marketing_names = ['A100', 'A107']
+                if om.sysGeneralHwName in viprion_marketing_names:
+                    #Set the device_model as if the original sysObjectID
+                    #had come back correctly.
+                    device_model = self.sysDeviceModelOIDs['19']
             else:
                 #unknown is too vague.. since this value
                 #could get registered as a product, make it unique enough
                 device_model = "Unknown F5 Device"
                 
         #When we collect the model, VIPRIONs don't generally get classified
-        # to the model. Lets further clarify the type of Viprion
+        # to the model. Lets further clarify the type of Viprion.
+        #This is again using the platform codes listed in BIG-IP_Product_Matrix.pdf
+        #which is linked above
         if device_model == self.sysDeviceModelOIDs['19']:
             if om.setHWProductKey == "J10x":
                 device_model = device_model + " 4400"
             if om.setHWProductKey == "A103":
                 device_model = device_model + " 2400"
+                
+
         
             
         # Now set it. I'm not entirely up to speed on this method, 
