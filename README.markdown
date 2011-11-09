@@ -62,10 +62,12 @@ developer mode using the following commands.
   * Minor updates to support segrated github repos and README.markdown
   * Including zenoss.snmp.DeviceMap & zenoss.snmp.NewDeviceMap plugins on the 
   newly created device class so that the base SNMP attributes are collected
+ * 1.1
+  * Some additional tweaks for better Viprion detection
 
 ## Known Issues
  *  Currently the status of the virtual server component is only detected and 
  	set at model time. Its not a real time (or near real time) reflection of 
  	the state of the virtual server on the LTM
  	
-[Latest Package for Python 2.6]: <https://github.com/downloads/zenoss/ZenPacks.community.f5/ZenPacks.community.f5-1.0-py2.6.egg>
+[Latest Package for Python 2.6]: <https://github.com/downloads/zenoss/ZenPacks.community.f5/ZenPacks.community.f5-1.1-py2.6.egg>
