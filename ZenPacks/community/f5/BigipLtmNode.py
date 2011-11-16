@@ -1,5 +1,5 @@
 """
-BigIP LTM Device
+BigIP Pool Component
 """
 
 import Globals
@@ -10,42 +10,29 @@ from Products.ZenRelations.RelSchema import *
 from Products.ZenModel.ZenossSecurity import ZEN_VIEW
 from copy import deepcopy
 
-class BigipVirtualServer(DeviceComponent, ManagedEntity):
+class BigipLtmNode(DeviceComponent, ManagedEntity):
     """
-    A class to represent a virtual server running on an LTM
+    A class to represent a pool running on an LTM
     """
    
-    portal_type = meta_type = "BigipVirtualServer"
+    portal_type = meta_type = "BigipLtmNode"
     
-    ltmVirtualServName = "DefaultVirtualServer"
-    vsIP = "000.000.000.000"
-    ltmVirtualServPort = 0
-    VsStatusAvailState = None
-    VsStatusEnabledState = None
-    VsStatusDetailReason = None
+    ltmNodeAddrAddr = None
+    ltmNodeAddrScreenName = None
     
-    ltmVsStatusName = None
-    ltmVsStatusEnabledState = None
-    ltmVsStatusAvailState = None
-    ltmVirtualServAddr = None
-    ltmVsStatusDetailReason = None
-    
-    status = ""
     _properties = (
-        {'id': 'ltmVirtualServName', 'type': 'string', 'mode': ''},
-        {'id': 'vsIP', 'type': 'string', 'mode': ''},
-        {'id': 'ltmVirtualServPort', 'type': 'integer', 'mode': ''},
+        {'id': 'ltmNodeName', 'type': 'string', 'mode': ''},
     )
 
     _relations = (
-        ('Ltm', ToOne(ToManyCont,'ZenPacks.community.f5.BigipLtm', 'LtmVs')),
+        ('Ltm', ToOne(ToManyCont,'ZenPacks.community.f5.BigipLtm', 'LtmNodes')),
     )
 
     factory_type_information = (
     {
-        'id': 'BigipVirtualServer',
-        'meta_type': 'BigipVirtualServer',
-        'description': 'Virtual Server Information',
+        'id': 'BigipLtmNode',
+        'meta_type': 'BigipLtmNode',
+        'description': 'LTM Node Information',
         'product': 'f5',
         'immediate_view' : 'graphs',
         'actions'        : (
@@ -69,18 +56,15 @@ class BigipVirtualServer(DeviceComponent, ManagedEntity):
         )
     },
     )
-
+    
     def device(self):
         return self.Ltm()
     
     def monitored(self):
         """
-        If a virtual server exists, we want to default to monitoring it.
+        If a LTM Node exists, we want to default to monitoring it.
         """ 
         return True
-    
-    #def __init__(self, *args, **kw):
-    #    Device.__init__(self, *args, **kw)
-    #    self.buildRelations()
-        
-InitializeClass(BigipVirtualServer)
+  
+         
+InitializeClass(BigipLtmNode)

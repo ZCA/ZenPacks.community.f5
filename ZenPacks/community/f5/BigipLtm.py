@@ -20,10 +20,17 @@ class BigipLtm(Device):
     sysProductEdition = ""
     sysProductName = ""
     
+    sysObjectID = None
+    sysGeneralHwName = None
+    
     #_relations = Device._relations
     _relations = Device._relations + (
         ('LtmVs', ToManyCont(ToOne,
                         'ZenPacks.community.f5.BigipVirtualServer', 'Ltm')),
+        ('LtmPools', ToManyCont(ToOne,
+                        'ZenPacks.community.f5.BigipLtmPool', 'Ltm')),
+        ('LtmNodes', ToManyCont(ToOne,
+                        'ZenPacks.community.f5.BigipLtmNode', 'Ltm')),
     )
     _properties = (
         {'id': 'sysProductBuild', 'type': 'string', 'mode': ''},

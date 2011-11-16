@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure xmlns="http://namespaces.zope.org/browser">
+    <resourceDirectory
+        name="f5"
+        directory="resources"
+        />
+        
+    <!-- Register custom JavaScript for ExampleDevices. -->
+    <viewlet
+        name="js-f5_VirtualServer"
+        paths="/++resource++f5/js/VirtualServer.js"
+        weight="10"
+        for="..BigipLtm.BigipLtm"
+        manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+        class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+        permission="zope2.Public"
+        />
+        
+    <viewlet
+        name="js-f5_Pool"
+        paths="/++resource++f5/js/Pool.js"
+        weight="10"
+        for="..BigipLtm.BigipLtm"
+        manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+        class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+        permission="zope2.Public"
+        />
+        
+    <viewlet
+        name="js-f5_Node"
+        paths="/++resource++f5/js/Node.js"
+        weight="10"
+        for="..BigipLtm.BigipLtm"
+        manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+        class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+        permission="zope2.Public"
+        />
+    
+ </configure>

@@ -8,6 +8,16 @@ from Products.Zuul.decorators import info
 #from Products.ZenUtils.Utils import convToUnits
 from ZenPacks.community.f5 import interfaces
 
+class BigipLtmPoolInfo(ComponentInfo):
+    implements(interfaces.IBigipLtmPoolInfo)
+    ltmPoolActiveMemberCnt = ProxyProperty("ltmPoolActiveMemberCnt")
+    ltmPoolMemberCnt = ProxyProperty("ltmPoolMemberCnt")
+    
+class BigipLtmNodeInfo(ComponentInfo):
+    implements(interfaces.IBigipLtmPoolInfo)
+    ltmNodeAddrAddr = ProxyProperty("ltmNodeAddrAddr")
+    ltmNodeAddrScreenName = ProxyProperty("ltmNodeAddrScreenName")
+    
 class BigipVirtualServerInfo(ComponentInfo):
     implements(interfaces.IBigipVirtualServerInfo)
     

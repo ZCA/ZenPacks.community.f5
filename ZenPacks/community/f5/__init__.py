@@ -17,7 +17,11 @@ class ZenPack(ZenPackBase):
     """
     
     #A List of Custom zProperties To Add
-    packZProperties = [('zF5BigipVirtualServerNameFilter', '', 'string'),]
+    packZProperties = [
+                       ('zF5BigipVirtualServerNameFilter', '', 'string'),
+                       ('zF5BigipPoolsNameFilter', '', 'string'),
+                       ('zF5BigipNodesNameFilter', '', 'string'),
+                       ]
     
     def install(self, app):
         """
@@ -29,7 +33,8 @@ class ZenPack(ZenPackBase):
         
         # Build a list of modeler plugins that we want to apply to our new device class
         plugins=['zenoss.snmp.DeviceMap', 'zenoss.snmp.NewDeviceMap',
-                 'BigipLtmVirtualServerMap', 'BigipDeviceMap']
+                 'BigipLtmVirtualServerMap', 'BigipDeviceMap',
+                 'BigipLtmPoolMap', 'BigipLtmNodeMap']
         
         # Apply the list of plugins to the device class. This will overwrite whats there, not append
         f5.setZenProperty('zCollectorPlugins', plugins)
