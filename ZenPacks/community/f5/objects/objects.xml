@@ -1617,9 +1617,6 @@ False
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
-<property type="long" id="sequence" mode="w" >
-3
-</property>
 <tomanycont id='graphPoints'>
 <object id='ClientBytesIn' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
@@ -1707,7 +1704,7 @@ False
 True
 </property>
 <property type="long" id="sequence" mode="w" >
-2
+3
 </property>
 <tomanycont id='graphPoints'>
 <object id='TotalConnections' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
@@ -1764,7 +1761,7 @@ False
 True
 </property>
 <property type="long" id="sequence" mode="w" >
-1
+2
 </property>
 <tomanycont id='graphPoints'>
 <object id='CurrentConnections' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
@@ -1819,6 +1816,9 @@ False
 </property>
 <property type="boolean" id="hasSummary" mode="w" >
 True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
 </property>
 <tomanycont id='graphPoints'>
 <object id='TotalRequests' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
