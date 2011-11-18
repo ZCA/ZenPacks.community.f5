@@ -76,7 +76,7 @@ developer mode using the following commands.
   * Some additional tweaks for better Viprion detection
  * 1.2
   * Pool & Node Component Modeling Added
-  * Component Detail Grids update to show more relevant columns for each of the modeled component types
+  * Component Detail Grids update to show more relevant columns for each of the modeled component types.
 
 ## Known Issues
  *  Currently the status of the virtual server component is only detected and 
