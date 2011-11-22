@@ -2,12 +2,15 @@
 import Globals
 import os.path
 from Products.ZenModel.ZenPack import ZenPackBase
+import logging
 
 skinsDir = os.path.join(os.path.dirname(__file__), 'skins')
 from Products.CMFCore.DirectoryView import registerDirectory
 if os.path.isdir(skinsDir):
     registerDirectory(skinsDir, globals())
-    
+
+ZENPACK_NAME = 'ZenPacks.community.f5'
+log = logging.getLogger(ZENPACK_NAME)  
 
 
 
@@ -42,3 +45,13 @@ class ZenPack(ZenPackBase):
         # Register our device class file, with the new device class
         f5.setZenProperty('zPythonClass', 'ZenPacks.community.f5.BigipLtm')
         ZenPackBase.install(self, app)
+        #Rebuild Relationships
+        self._rebuild_device_relationships(f5)
+        
+    def _rebuild_device_relationships(self, dev_org):
+        log.info("Rebuilding relationships for existing devices in %s", dev_org.id)
+        for dev in self.dmd.Devices.getSubDevices():
+            log.debug("Rebuilding relationships on %s", dev.id)
+            dev.buildRelations()
+            
+        
