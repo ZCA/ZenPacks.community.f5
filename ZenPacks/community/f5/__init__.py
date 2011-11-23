@@ -9,9 +9,10 @@ from Products.CMFCore.DirectoryView import registerDirectory
 if os.path.isdir(skinsDir):
     registerDirectory(skinsDir, globals())
 
-ZENPACK_NAME = 'ZenPacks.community.f5'
-log = logging.getLogger(ZENPACK_NAME)  
-
+#Create a logger in the "zen" namespace. Creating it as a child of zen
+#Ensures we inherit existing logging configuration. We then append the zenpack
+#name to create a unique logger
+log = logging.getLogger('.'.join(['zen', __name__]))  
 
 
 class ZenPack(ZenPackBase):
@@ -49,7 +50,7 @@ class ZenPack(ZenPackBase):
         self._rebuild_device_relationships(f5)
         
     def _rebuild_device_relationships(self, dev_org):
-        log.info("Rebuilding relationships for existing devices in %s", dev_org.id)
+        log.info("Rebuilding relationships for existing devices in %s", dev_org.getPrimaryDmdId())
         for dev in self.dmd.Devices.getSubDevices():
             log.debug("Rebuilding relationships on %s", dev.id)
             dev.buildRelations()

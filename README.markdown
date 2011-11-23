@@ -77,10 +77,17 @@ developer mode using the following commands.
  * 1.2
   * Pool & Node Component Modeling Added
   * Component Detail Grids update to show more relevant columns for each of the modeled component types.
+ * 1.3
+  * Added some code to the install method so that it rebuilds device relationships on install. This
+    this seems be at the root of folks needing to delete/re-add devices to get components show up
+ * 1.4
+  * Added the pool and node component templates that had been omitted from previous pack exports
+  * minor tweaks to logging during installation time
+  * some code cleanup to remove some unnecessary items that got added along the way
 
 ## Known Issues
  *  Currently the status of the virtual server component is only detected and 
  	set at model time. Its not a real time (or near real time) reflection of 
  	the state of the virtual server on the LTM
  	
-[Latest Package for Python 2.6]: <https://github.com/downloads/dpetzel/ZenPacks.community.f5/ZenPacks.community.f5-1.2-py2.6.egg>
+[Latest Package for Python 2.6]: <https://github.com/downloads/dpetzel/ZenPacks.community.f5/ZenPacks.community.f5-1.4-py2.6.egg>

@@ -29,7 +29,9 @@ class BigipLtmPool(DeviceComponent, ManagedEntity):
     _relations = (
         ('Ltm', ToOne(ToManyCont,'ZenPacks.community.f5.BigipLtm', 'LtmPools')),
     )
-
+    
+    #This seems to be the bare minimum required to get the basic 
+    #menu items in the component grid
     factory_type_information = (
     {
         'id': 'BigipLtmPool',
@@ -37,13 +39,7 @@ class BigipLtmPool(DeviceComponent, ManagedEntity):
         'description': 'LTM Pool Information',
         'product': 'f5',
         'immediate_view' : 'viewHistory',
-        'actions'        : (
-            { 'id'            : 'viewHistory'
-            , 'name'          : 'Modifications'
-            , 'action'        : 'viewHistory'
-            , 'permissions'   : (ZEN_VIEW, )
-            },
-        )
+        'actions'        : ()
     },
     )
     

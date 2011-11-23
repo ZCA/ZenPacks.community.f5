@@ -92,11 +92,6 @@ class BigipDeviceMap(SnmpPlugin):
             model_index = om.sysObjectID.replace(self.model_oids_base,"")
             device_model = self.sysDeviceModelOIDs.get(model_index, 'unknown')
             
-            #Now Attempt to Locate the Model Number
-            #snmpGetDeviceModelOid = GetMap({om.sysObjectID: 'sysDeviceModel'})
-            #print snmpGetDeviceModelOid.oidmap
-            #print self.objectMap(snmpGetDeviceModelOid.oidmap)
-            #print dir(snmpGetDeviceModelOid)
 
         # Build a product build and version string to populate the OSModel field
         # Also set the manufacturer_name
@@ -138,9 +133,6 @@ class BigipDeviceMap(SnmpPlugin):
                 device_model = device_model + " 4400"
             if om.setHWProductKey == "A103":
                 device_model = device_model + " 2400"
-                
-
-        
             
         # Now set it. I'm not entirely up to speed on this method, 
         # But in testing the multiargs stuff will populate two fields in the GUI

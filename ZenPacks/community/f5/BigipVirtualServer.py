@@ -41,6 +41,8 @@ class BigipVirtualServer(DeviceComponent, ManagedEntity):
         ('Ltm', ToOne(ToManyCont,'ZenPacks.community.f5.BigipLtm', 'LtmVs')),
     )
 
+    #This seems to be the bare minimum required to get the basic 
+    #menu items in the component grid
     factory_type_information = (
     {
         'id': 'BigipVirtualServer',
@@ -48,25 +50,7 @@ class BigipVirtualServer(DeviceComponent, ManagedEntity):
         'description': 'Virtual Server Information',
         'product': 'f5',
         'immediate_view' : 'graphs',
-        'actions'        : (
-           # This populates the Dropdown box when viewing virtual servers.
-           # Via some magic I don't yet understand, events and details are
-           # In the menu without interaction. However The following is needed
-           # to add graphs as a menu option. This leverages a native skin
-           # And we don't need to provide our own.
-           # { 'id'            : 'graphs'
-           # , 'name'          : 'Graphs'
-           # , 'action'        : 'graphs'
-           # , 'permissions'   : (ZEN_VIEW, )
-           # },
-            # Lets also enable modification history, just cause we can
-            # Again this is a default skin, and not one this pack is providing.
-            { 'id'            : 'viewHistory'
-            , 'name'          : 'Modifications'
-            , 'action'        : 'viewHistory'
-            , 'permissions'   : (ZEN_VIEW, )
-            },
-        )
+        'actions'        : ()
     },
     )
 
@@ -78,9 +62,5 @@ class BigipVirtualServer(DeviceComponent, ManagedEntity):
         If a virtual server exists, we want to default to monitoring it.
         """ 
         return True
-    
-    #def __init__(self, *args, **kw):
-    #    Device.__init__(self, *args, **kw)
-    #    self.buildRelations()
         
 InitializeClass(BigipVirtualServer)
