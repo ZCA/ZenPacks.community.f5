@@ -84,10 +84,14 @@ developer mode using the following commands.
   * Added the pool and node component templates that had been omitted from previous pack exports
   * minor tweaks to logging during installation time
   * some code cleanup to remove some unnecessary items that got added along the way
+ * 1.5
+  * No actual code changes, just template changes.
+    Replaced CFUNC of MAX with AVERAGE on all the graph defs based on some feedback on the forums as well 
+    as additional testing
 
 ## Known Issues
  *  Currently the status of the virtual server component is only detected and 
  	set at model time. Its not a real time (or near real time) reflection of 
  	the state of the virtual server on the LTM
  	
-[Latest Package for Python 2.6]: <https://github.com/downloads/dpetzel/ZenPacks.community.f5/ZenPacks.community.f5-1.4-py2.6.egg>
+[Latest Package for Python 2.6]: <https://github.com/downloads/dpetzel/ZenPacks.community.f5/ZenPacks.community.f5-1.5-py2.6.egg>

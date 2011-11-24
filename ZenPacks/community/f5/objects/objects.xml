@@ -769,7 +769,7 @@ ${graphPoint/id}
 sysGlobalTmmStatClientTotConnsDerive_sysGlobalTmmStatClientTotConnsDerive
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 <object id='Current Connections' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
@@ -798,7 +798,7 @@ ${graphPoint/id}
 sysGlobalTmmStatClientCurConns_sysGlobalTmmStatClientCurConns
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -840,7 +840,7 @@ AREA
 1
 </property>
 <property type="boolean" id="stacked" mode="w" >
-True
+False
 </property>
 <property type="string" id="format" mode="w" >
 %5.2lf%s
@@ -855,7 +855,7 @@ ${graphPoint/id}
 sysGlobalTmmStatClientBytesIn_sysGlobalTmmStatClientBytesIn
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 <object id='Client Bytes Out' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
@@ -869,7 +869,7 @@ AREA
 1
 </property>
 <property type="boolean" id="stacked" mode="w" >
-True
+False
 </property>
 <property type="string" id="format" mode="w" >
 %5.2lf%s
@@ -884,7 +884,7 @@ ${graphPoint/id}
 sysGlobalTmmStatClientBytesOut_sysGlobalTmmStatClientBytesOut
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -1001,7 +1001,7 @@ ${graphPoint/id}
 sysGlobalTmmStatServerTotConnsDerive_sysGlobalTmmStatServerTotConnsDerive
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 <object id='Current Connections' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
@@ -1027,7 +1027,7 @@ ${graphPoint/id}
 sysGlobalTmmStatServerCurConns_sysGlobalTmmStatServerCurConns
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -1072,7 +1072,7 @@ AREA
 1
 </property>
 <property type="boolean" id="stacked" mode="w" >
-True
+False
 </property>
 <property type="string" id="format" mode="w" >
 %5.2lf%s
@@ -1087,7 +1087,7 @@ ${graphPoint/id}
 sysGlobalTmmStatServerBytesIn_sysGlobalTmmStatServerBytesIn
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 <object id='Server Bytes Out' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
@@ -1098,7 +1098,7 @@ AREA
 1
 </property>
 <property type="boolean" id="stacked" mode="w" >
-True
+False
 </property>
 <property type="string" id="format" mode="w" >
 %5.2lf%s
@@ -1113,7 +1113,7 @@ ${graphPoint/id}
 sysGlobalTmmStatServerBytesOut_sysGlobalTmmStatServerBytesOut
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -1170,7 +1170,7 @@ ${graphPoint/id}
 sysGlobalHostMemTotal_sysGlobalHostMemTotal
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 <object id='Used Memory' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
@@ -1199,7 +1199,7 @@ ${graphPoint/id}
 sysGlobalHostMemUsed_sysGlobalHostMemUsed
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -1256,7 +1256,7 @@ ${graphPoint/id}
 sysGlobalTmmStatMemoryTotal_sysGlobalTmmStatMemoryTotal
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 <object id='Used Tmm Memory' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
@@ -1342,7 +1342,7 @@ ${graphPoint/id}
 sysGlobalTmmStatTmUsageRatio1m_sysGlobalTmmStatTmUsageRatio1m
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 <object id='Usage Ratio - Last 1 Second' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
@@ -1371,7 +1371,7 @@ ${graphPoint/id}
 sysGlobalTmmStatTmUsageRatio5s_sysGlobalTmmStatTmUsageRatio5s
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 <object id='Usage Ratio - Last 5 Minutes' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
@@ -1400,7 +1400,7 @@ ${graphPoint/id}
 sysGlobalTmmStatTmUsageRatio5m_sysGlobalTmmStatTmUsageRatio5m
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -1656,7 +1656,7 @@ ${graphPoint/id}
 ltmNodeAddrStatServerBytesIn_ltmNodeAddrStatServerBytesIn
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 <object id='Bytes Out' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
@@ -1685,7 +1685,7 @@ ${graphPoint/id}
 ltmNodeAddrStatServerBytesOut_ltmNodeAddrStatServerBytesOut
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -1742,7 +1742,7 @@ ${graphPoint/id}
 ltmNodeAddrStatServerTotConns_ltmNodeAddrStatServerTotConns
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -1799,7 +1799,7 @@ ${graphPoint/id}
 ltmNodeAddrStatServerCurConns_ltmNodeAddrStatServerCurConns
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -1856,7 +1856,7 @@ ${graphPoint/id}
 ltmNodeAddrStatTotRequests_ltmNodeAddrStatTotRequests
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -2174,7 +2174,7 @@ ${graphPoint/id}
 ltmPoolStatServerBytesIn_ltmPoolStatServerBytesIn
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 <object id='Bytes Out' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
@@ -2203,7 +2203,7 @@ ${graphPoint/id}
 ltmPoolStatServerBytesOut_ltmPoolStatServerBytesOut
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -2260,7 +2260,7 @@ ${graphPoint/id}
 ltmPoolStatServerTotConns_ltmPoolStatServerTotConns
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -2314,7 +2314,7 @@ ${graphPoint/id}
 ltmPoolStatServerCurConns_ltmPoolStatServerCurConns
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -2644,7 +2644,7 @@ ${graphPoint/id}
 ClientBytesIn_ClientBytesIn
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 <object id='ClientBytesOut' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
@@ -2673,7 +2673,7 @@ ${graphPoint/id}
 ClientBytesOut_ClientBytesOut
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -2730,7 +2730,7 @@ ${graphPoint/id}
 TotalConnections_TotalConnections
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -2787,7 +2787,7 @@ ${graphPoint/id}
 CurrentConnections_CurrentConnections
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
@@ -2844,7 +2844,7 @@ ${graphPoint/id}
 TotalRequests_TotalRequests
 </property>
 <property type="string" id="cFunc" mode="w" >
-MAX
+AVERAGE
 </property>
 </object>
 </tomanycont>
