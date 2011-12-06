@@ -35,6 +35,7 @@ ZC.BigipVirtualServerPanel = Ext.extend(ZC.ComponentGridPanel, {
                 {name: 'severity'},
                 {name: 'vsIP'},
                 {name: 'ltmVirtualServPort'},
+                {name: 'ltmVirtualServAddrRouteDomain'},
                 {name: 'VsStatusEnabledState'},
                 {name: 'VsStatusAvailState'},
                 {name: 'monitor'},
@@ -65,6 +66,12 @@ ZC.BigipVirtualServerPanel = Ext.extend(ZC.ComponentGridPanel, {
                 sortable: true,
                 width: 100
             },{
+                id: 'ltmVirtualServAddrRouteDomain',
+                dataIndex: 'ltmVirtualServAddrRouteDomain',
+                header: _t('route-domain'),
+                sortable: true,
+                width: 100
+            },{
                 id: 'VsStatusEnabledState',
                 dataIndex: 'VsStatusEnabledState',
                 header: _t('Enabled/Disabled'),
@@ -76,12 +83,6 @@ ZC.BigipVirtualServerPanel = Ext.extend(ZC.ComponentGridPanel, {
                 header: _t('Availability Status'),
                 sortable: true,
                 width: 200
-            },{
-                id: 'status',
-                dataIndex: 'status',
-                header: _t('Status'),
-                sortable: true,
-                width: 70
             },{
                 id: 'monitored',
                 dataIndex: 'monitored',

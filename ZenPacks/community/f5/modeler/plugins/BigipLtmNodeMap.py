@@ -8,10 +8,9 @@ Gather F5 LTM Node Information
 from Products.DataCollector.plugins.CollectorPlugin import SnmpPlugin, GetTableMap, GetMap
 from Products.DataCollector.plugins.DataMaps import ObjectMap
 import re
-import binascii
-import string
-import socket
-from pprint import pprint
+
+from BigIpUtils import unpack_address_to_string
+from BigIpUtils import avail_status_values, enable_state_values
 
 class BigipLtmNodeMap(SnmpPlugin):
     """
@@ -34,10 +33,17 @@ class BigipLtmNodeMap(SnmpPlugin):
         '.1.2': 'ltmNodeAddrAddr',
         '.1.12': 'ltmNodeAddrScreenName',
     }
+    # The node Status is provided from a separate table
+    status_columns = {
+        '.1.3': 'ltmNodeAddrStatusAvailState',
+        '.1.4': 'ltmNodeAddrStatusEnabledState',
+        '.1.6': 'ltmNodeAddrStatusDetailReason',       
+    }
     
     snmpGetTableMaps = (
         #Virtual Server Table
         GetTableMap('ltmNodeAddrTable', '.1.3.6.1.4.1.3375.2.2.4.1.2', basecolumns),
+        GetTableMap('ltmNodeStatusTable', '.1.3.6.1.4.1.3375.2.2.4.3.2', status_columns)
     )
 
     def condition(self, device, log):
@@ -60,6 +66,13 @@ class BigipLtmNodeMap(SnmpPlugin):
         
         ltmnode_table = tabledata.get("ltmNodeAddrTable")
         
+        # Grab the second table and append it to the first
+        status_table = tabledata.get("ltmNodeStatusTable")
+        for oid, data in status_table.items():
+            for key, value in data.items():
+                if key not in ltmnode_table[oid]:
+                    ltmnode_table[oid][key] = value
+        
         maps = []
         rm = self.relMap()
         # Get the list of name patterns to search for
@@ -76,11 +89,21 @@ class BigipLtmNodeMap(SnmpPlugin):
                     binclude = False
             if binclude == True:
                 # The value fetched is a packed hex representation of the IP
-                # Use socket to convert to octet based IP
-                # http://docs.python.org/library/socket.html#socket.inet_ntoa
-                om.ltmNodeAddrAddr = socket.inet_ntoa(om.ltmNodeAddrAddr)
+                # Try and unpack the address, and check if route_domains
+                # are in use
+                address, route_domain = unpack_address_to_string(oid, 
+                                                            om.ltmNodeAddrAddr)
+                if address != "":
+                    om.ltmNodeAddrAddr = address
+                if route_domain != "":
+                    om.ltmNodeAddrRouteDomain = route_domain
                 om.id = self.prepId(om.ltmNodeAddrAddr)
                 om.snmpindex = oid
+
+                om.ltmNodeAddrStatusEnabledState = \
+                        enable_state_values[om.ltmNodeAddrStatusEnabledState]
+                om.ltmNodeAddrStatusAvailState = \
+                            avail_status_values[om.ltmNodeAddrStatusAvailState]
                 rm.append(om)
         log.debug(rm)
         return [rm]        

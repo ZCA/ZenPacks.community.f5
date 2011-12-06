@@ -34,6 +34,8 @@ ZC.BigipLtmPoolPanel = Ext.extend(ZC.ComponentGridPanel, {
                 {name: 'severity'},
                 {name: 'ltmPoolActiveMemberCnt'},
                 {name: 'ltmPoolMemberCnt'},
+                {name: 'ltmPoolStatusEnabledState'},
+                {name: 'ltmPoolStatusAvailState'},
                 {name: 'monitor'},
                 {name: 'monitored'}
             ],
@@ -62,11 +64,17 @@ ZC.BigipLtmPoolPanel = Ext.extend(ZC.ComponentGridPanel, {
                 sortable: true,
                 width: 100
             },{
-                id: 'status',
-                dataIndex: 'status',
-                header: _t('Status'),
+                id: 'ltmPoolStatusEnabledState',
+                dataIndex: 'ltmPoolStatusEnabledState',
+                header: _t('Enabled/Disabled'),
                 sortable: true,
-                width: 70
+                width: 100
+            },{
+                id: 'ltmPoolStatusAvailState',
+                dataIndex: 'ltmPoolStatusAvailState',
+                header: _t('Availability Status'),
+                sortable: true,
+                width: 200
             },{
                 id: 'monitored',
                 dataIndex: 'monitored',

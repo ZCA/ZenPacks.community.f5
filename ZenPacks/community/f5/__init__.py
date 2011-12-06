@@ -12,7 +12,7 @@ if os.path.isdir(skinsDir):
 #Create a logger in the "zen" namespace. Creating it as a child of zen
 #Ensures we inherit existing logging configuration. We then append the zenpack
 #name to create a unique logger
-log = logging.getLogger('.'.join(['zen', __name__]))  
+log = logging.getLogger('.'.join(['zen', __name__]))
 
 
 class ZenPack(ZenPackBase):

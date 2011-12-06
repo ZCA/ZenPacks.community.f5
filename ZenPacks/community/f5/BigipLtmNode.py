@@ -19,6 +19,10 @@ class BigipLtmNode(DeviceComponent, ManagedEntity):
     
     ltmNodeAddrAddr = None
     ltmNodeAddrScreenName = None
+    ltmNodeAddrRouteDomain = None
+    ltmNodeAddrStatusAvailState = None
+    ltmNodeAddrStatusEnabledState = None
+    ltmVsStatusDetailReason = None
     
     _properties = (
         {'id': 'ltmNodeName', 'type': 'string', 'mode': ''},

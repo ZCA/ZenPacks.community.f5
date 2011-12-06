@@ -29,8 +29,8 @@ class BigipVirtualServer(DeviceComponent, ManagedEntity):
     ltmVsStatusAvailState = None
     ltmVirtualServAddr = None
     ltmVsStatusDetailReason = None
+    ltmVirtualServAddrRouteDomain = None
     
-    status = ""
     _properties = (
         {'id': 'ltmVirtualServName', 'type': 'string', 'mode': ''},
         {'id': 'vsIP', 'type': 'string', 'mode': ''},

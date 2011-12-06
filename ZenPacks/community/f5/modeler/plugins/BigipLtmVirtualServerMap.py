@@ -9,10 +9,9 @@ Gather F5 LTM Virtual Server Information
 from Products.DataCollector.plugins.CollectorPlugin import SnmpPlugin, GetTableMap, GetMap
 from Products.DataCollector.plugins.DataMaps import ObjectMap
 import re
-import binascii
-import string
-import socket
-from pprint import pprint
+
+from BigIpUtils import unpack_address_to_string
+from BigIpUtils import avail_status_values, enable_state_values
 
 class BigipLtmVirtualServerMap(SnmpPlugin):
     """
@@ -56,29 +55,6 @@ class BigipLtmVirtualServerMap(SnmpPlugin):
         """
         Just as it sounds
         """
-        #The availability of the specified virtual server indicated in color.
-        #none - error;
-        #green - available in some capacity;
-        #yellow - not currently available;
-        #red - not available;
-        #blue - availability is unknown;
-        #gray - unlicensed.
-        avail_status_values = {
-                0: 'None - Error',
-                1: 'Green - available in some capacity',
-                2: 'Yellow - not currently available',
-                3: 'Red - not available',
-                4: 'Blue - availability is unknown',
-                5: 'Gray - unlicensed',
-            }
-    
-        
-        #The activity status of the specified virtual server, as specified 
-        #by the user.
-        enable_state_values = {
-                1: 'Enabled',
-                2: 'Disabled'
-            }
         
         log.info('processing %s for device %s', self.name(), device.id)
         getdata, tabledata = results
@@ -109,16 +85,17 @@ class BigipLtmVirtualServerMap(SnmpPlugin):
             if include_vs == True:
                 om.id = self.prepId(om.ltmVirtualServName)
                 om.snmpindex = oid
-                # The value fetched is a packed hex representation of the IP
-                # Use socket to convert to octet based IP
-                # http://docs.python.org/library/socket.html#socket.inet_ntoa
-                om.vsIP = socket.inet_ntoa(om.ltmVirtualServAddr)
-                #print om.status
-                if om.ltmVsStatusAvailState == 1:
-                    om.status = "Up"
-                else:
-                    om.status = "Down"
                 
+                # The value fetched is a packed hex representation of the IP
+                # Try and unpack the address, and check if route_domains
+                # are in use
+                address, route_domain = unpack_address_to_string(oid, 
+                                                        om.ltmVirtualServAddr)
+                if address != "":
+                    om.vsIP = address
+                if route_domain != "":
+                    om.ltmVirtualServAddrRouteDomain = route_domain
+
                 om.VsStatusEnabledState = enable_state_values[om.ltmVsStatusEnabledState]
                 om.VsStatusAvailState = avail_status_values[om.ltmVsStatusAvailState]
                 om.VsStatusDetailReason = om.ltmVsStatusDetailReason

@@ -20,6 +20,10 @@ class BigipLtmPool(DeviceComponent, ManagedEntity):
     ltmPoolName = ""
     ltmPoolActiveMemberCnt = 0
     ltmPoolMemberCnt = 0
+    ltmPoolStatusAvailState = None
+    ltmPoolStatusEnabledState = None
+    ltmPoolStatusDetailReason = None
+    
     _properties = (
         {'id': 'ltmPoolName', 'type': 'string', 'mode': ''},
         {'id': 'ltmPoolActiveMemberCnt', 'type': 'string', 'mode': ''},

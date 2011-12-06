@@ -8,10 +8,7 @@ Gather F5 LTM Pool Information
 from Products.DataCollector.plugins.CollectorPlugin import SnmpPlugin, GetTableMap, GetMap
 from Products.DataCollector.plugins.DataMaps import ObjectMap
 import re
-import binascii
-import string
-import socket
-from pprint import pprint
+from BigIpUtils import avail_status_values, enable_state_values
 
 class BigipLtmPoolMap(SnmpPlugin):
     """
@@ -35,10 +32,17 @@ class BigipLtmPoolMap(SnmpPlugin):
         '.1.8': 'ltmPoolActiveMemberCnt',
         '.1.23': 'ltmPoolMemberCnt',
     }
+    # The pool Status is provided from a separate table
+    status_columns = {
+        '.1.2': 'ltmPoolStatusAvailState',
+        '.1.3': 'ltmPoolStatusEnabledState',
+        '.1.5': 'ltmPoolStatusDetailReason',       
+    }
     
     snmpGetTableMaps = (
         #Virtual Server Table
         GetTableMap('ltmPoolTable', '.1.3.6.1.4.1.3375.2.2.5.1.2', basecolumns),
+        GetTableMap('ltmPoolStatusTable', '.1.3.6.1.4.1.3375.2.2.5.5.2', status_columns)
     )
 
     def condition(self, device, log):
@@ -61,6 +65,13 @@ class BigipLtmPoolMap(SnmpPlugin):
         
         ltmpool_table = tabledata.get("ltmPoolTable")
         
+        # Grab the second table and append it to the first
+        status_table = tabledata.get("ltmPoolStatusTable")
+        for oid, data in status_table.items():
+            for key, value in data.items():
+                if key not in ltmpool_table[oid]:
+                    ltmpool_table[oid][key] = value
+        
         maps = []
         rm = self.relMap()
         # Get the list of name patterns to search for
@@ -78,6 +89,10 @@ class BigipLtmPoolMap(SnmpPlugin):
             if binclude == True:
                 om.id = self.prepId(om.ltmPoolName)
                 om.snmpindex = oid
+                om.ltmPoolStatusEnabledState = \
+                        enable_state_values[om.ltmPoolStatusEnabledState]
+                om.ltmPoolStatusAvailState = \
+                            avail_status_values[om.ltmPoolStatusAvailState]
                 rm.append(om)
         log.debug(rm)
         return [rm]        

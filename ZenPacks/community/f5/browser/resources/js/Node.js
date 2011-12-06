@@ -34,6 +34,9 @@ ZC.BigipLtmNodePanel = Ext.extend(ZC.ComponentGridPanel, {
                 {name: 'severity'},
                 {name: 'ltmNodeAddrAddr'},
                 {name: 'ltmNodeAddrScreenName'},
+                {name: 'ltmNodeAddrRouteDomain'},
+                {name: 'ltmNodeAddrStatusEnabledState'},
+                {name: 'ltmNodeAddrStatusAvailState'},
                 {name: 'monitor'},
                 {name: 'monitored'}
             ],
@@ -62,11 +65,22 @@ ZC.BigipLtmNodePanel = Ext.extend(ZC.ComponentGridPanel, {
                 header: _t('Screen Name'),
                 width: 200
             },{
-                id: 'status',
-                dataIndex: 'status',
-                header: _t('Status'),
+                id: 'ltmNodeAddrRouteDomain',
+                dataIndex: 'ltmNodeAddrRouteDomain',
+                header: _t('route-domain'),
+                width: 100
+            },{
+                id: 'ltmNodeAddrStatusEnabledState',
+                dataIndex: 'ltmNodeAddrStatusEnabledState',
+                header: _t('Enabled/Disabled'),
                 sortable: true,
-                width: 70
+                width: 100
+            },{
+                id: 'ltmNodeAddrStatusAvailState',
+                dataIndex: 'ltmNodeAddrStatusAvailState',
+                header: _t('Availability Status'),
+                sortable: true,
+                width: 200
             },{
                 id: 'monitored',
                 dataIndex: 'monitored',
