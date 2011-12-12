@@ -2,8 +2,8 @@
 ZenPacks.community.f5
 =====================
 
-Content:
-
+.. contents::
+   :depth: 2
 Description
 ===========
 Provides basic F5 BIG-IP monitoring.  
