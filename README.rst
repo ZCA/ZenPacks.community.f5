@@ -3,7 +3,7 @@ ZenPacks.community.f5
 =====================
 
 .. contents::
-   :depth: 2
+   :depth: 3
 
 Description
 ===========
@@ -23,25 +23,25 @@ The ZenPack has the following:
 * A Device template which graphs many of the same performance stats as 
   would be seen in the Overview >> Performance section of the 10.x UI
 * Virtual Server Component Modeling
-* A component template for virtual servers. 
-* Virtual Server filtering. This pack adds a new zProperty, 
-  **zF5BigipVirtualServerNameFilter**, which when set will limit which virtual 
-  servers are included during a modeling cycle.  
+   * A component template for virtual servers. 
+   * Virtual Server filtering. This pack adds a new zProperty, 
+     **zF5BigipVirtualServerNameFilter**, which when set will limit which virtual 
+     servers are included during a modeling cycle.  
 * Node Component Modeling
-* A component template for nodes. 
-* Node filtering. This pack adds a new zProperty, **zF5BigipNodesNameFilter**, which when set will 
-  limit which nodes are included during a modeling cycle. 
+   * A component template for nodes. 
+   * Node filtering. This pack adds a new zProperty, **zF5BigipNodesNameFilter**, which when set will 
+     limit which nodes are included during a modeling cycle. 
 * Pool Component Modeling
-* A component template for Pools. 
-* Pool filtering. This pack adds a new zProperty, **zF5BigipPoolsNameFilter**, which when set will 
-  limit which pools are included during a modeling cycle. 
+   * A component template for Pools. 
+   * Pool filtering. This pack adds a new zProperty, **zF5BigipPoolsNameFilter**, which when set will 
+     limit which pools are included during a modeling cycle. 
     
 Requirements
 ============
- * Zenoss Versions Supported: 3.0+
- * External Dependencies: None
- * ZenPack Dependencies: None
- * Configuration: No Special configuration should be necessary.
+* Zenoss Versions Supported: 3.0+
+* External Dependencies: None
+* ZenPack Dependencies: None
+* Configuration: No Special configuration should be necessary.
 
 Installation
 ============
