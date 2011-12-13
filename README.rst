@@ -134,7 +134,3 @@ Pool Components
 .. |Virtual Server Components| image:: http://github.com/dpetzel/ZenPacks.community.f5/raw/master/screenshots/zenoss_bigip_vs_component.png
 .. |Node Components| image:: http://github.com/dpetzel/ZenPacks.community.f5/raw/master/screenshots/zenoss_big_node_component.png
 .. |Pool Components| image:: http://github.com/dpetzel/ZenPacks.community.f5/raw/master/screenshots/zenoss_big_pool_component.png
-
-
-
-
