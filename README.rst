@@ -48,16 +48,18 @@ Requirements
 * ZenPack Dependencies: None
 * Configuration: No Special configuration should be necessary.
 
-Installation
-============
-Normal Installation (packaged egg)
-----------------------------------
+Download
+========
 Download the appropriate package for your Zenoss version from the list
 below.
 
 * Zenoss 3.0+ `Latest Package for Python 2.6`_
-  
-Then copy it to your Zenoss server and run the following commands as the zenoss
+
+Installation
+============
+Normal Installation (packaged egg)
+----------------------------------
+Copy the downloaded .egg to your Zenoss server and run the following commands as the zenoss
 user::
 
     zenpack --install <package.egg>
