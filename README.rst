@@ -117,8 +117,9 @@ Change History
     as additional testing
     
 * 1.6
-   * Added support for `Route Domains`_
-   * Cleanup and standardization of columns in the various component grids
+
+  * Added support for `Route Domains`_
+  * Cleanup and standardization of columns in the various component grids
     
 Known Issues
 ============
