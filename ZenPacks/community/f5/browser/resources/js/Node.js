@@ -67,7 +67,7 @@ ZC.BigipLtmNodePanel = Ext.extend(ZC.ComponentGridPanel, {
             },{
                 id: 'ltmNodeAddrRouteDomain',
                 dataIndex: 'ltmNodeAddrRouteDomain',
-                header: _t('route-domain'),
+                header: _t('Route Domain'),
                 width: 100
             },{
                 id: 'ltmNodeAddrStatusEnabledState',

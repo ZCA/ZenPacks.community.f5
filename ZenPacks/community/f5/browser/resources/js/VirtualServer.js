@@ -68,7 +68,7 @@ ZC.BigipVirtualServerPanel = Ext.extend(ZC.ComponentGridPanel, {
             },{
                 id: 'ltmVirtualServAddrRouteDomain',
                 dataIndex: 'ltmVirtualServAddrRouteDomain',
-                header: _t('route-domain'),
+                header: _t('Route Domain'),
                 sortable: true,
                 width: 100
             },{
