@@ -76,7 +76,7 @@ If you wish to further develop and possibly contribute back to the f5
 ZenPack you should clone the git repository, then install the ZenPack in
 developer mode using the following commands::
 
-    git clone git://github.com/zenoss/ZenPacks.community.f5.git
+    git clone git://github.com/dpetzel/ZenPacks.community.f5.git
     zenpack --link --install ZenPacks.community.f5
     zenoss restart
     
