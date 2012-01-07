@@ -116,6 +116,10 @@ Change History
     Replaced CFUNC of MAX with AVERAGE on all the graph defs based on some feedback on the forums as well 
     as additional testing
     
+* 1.6
+   * Added support for `Route Domains`_
+   * Cleanup and standardization of columns in the various component grids
+    
 Known Issues
 ============
 * Currently the status of the virtual server component is only detected and 
@@ -144,7 +148,8 @@ Pool Components
 
 .. External References Below. Nothing Below This Line Should Be Rendered
 
-.. _Latest Package for Python 2.6: http://github.com/downloads/dpetzel/ZenPacks.community.f5/ZenPacks.community.f5-1.5-py2.6.egg
+.. _Latest Package for Python 2.6: http://github.com/downloads/dpetzel/ZenPacks.community.f5/ZenPacks.community.f5-1.6-py2.6.egg
+.. _Route Domains: http://devcentral.f5.com/Tutorials/TechTips/tabid/63/articleType/ArticleView/articleId/353/v10--A-Look-at-Route-Domains.aspx
 
 .. |Device Details| image:: http://github.com/dpetzel/ZenPacks.community.f5/raw/master/screenshots/zenoss_bigip_DeviceDetails.png
 .. |Virtual Server Components| image:: http://github.com/dpetzel/ZenPacks.community.f5/raw/master/screenshots/zenoss_bigip_vs_component.png
