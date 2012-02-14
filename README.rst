@@ -77,7 +77,7 @@ If you wish to further develop and possibly contribute back to the f5
 ZenPack you should clone the git repository, then install the ZenPack in
 developer mode using the following commands::
 
-    git clone git://github.com/dpetzel/ZenPacks.community.f5.git
+    git clone git://github.com/ZCA/ZenPacks.community.f5.git
     zenpack --link --install ZenPacks.community.f5
     zenoss restart
     
@@ -152,11 +152,11 @@ Pool Components
 
 .. External References Below. Nothing Below This Line Should Be Rendered
 
-.. _Latest Package for Python 2.6: http://github.com/downloads/dpetzel/ZenPacks.community.f5/ZenPacks.community.f5-1.6-py2.6.egg
-.. _Latest Package for Python 2.7: http://github.com/downloads/dpetzel/ZenPacks.community.f5/ZenPacks.community.f5-1.6-py2.7.egg
+.. _Latest Package for Python 2.6: http://github.com/downloads/ZCA/ZenPacks.community.f5/ZenPacks.community.f5-1.6-py2.6.egg
+.. _Latest Package for Python 2.7: http://github.com/downloads/ZCA/ZenPacks.community.f5/ZenPacks.community.f5-1.6-py2.7.egg
 .. _Route Domains: http://devcentral.f5.com/Tutorials/TechTips/tabid/63/articleType/ArticleView/articleId/353/v10--A-Look-at-Route-Domains.aspx
 
-.. |Device Details| image:: http://github.com/dpetzel/ZenPacks.community.f5/raw/master/screenshots/zenoss_bigip_DeviceDetails.png
-.. |Virtual Server Components| image:: http://github.com/dpetzel/ZenPacks.community.f5/raw/master/screenshots/zenoss_bigip_vs_component.png
-.. |Node Components| image:: http://github.com/dpetzel/ZenPacks.community.f5/raw/master/screenshots/zenoss_big_node_component.png
-.. |Pool Components| image:: http://github.com/dpetzel/ZenPacks.community.f5/raw/master/screenshots/zenoss_big_pool_component.png
+.. |Device Details| image:: http://github.com/ZCA/ZenPacks.community.f5/raw/master/screenshots/zenoss_bigip_DeviceDetails.png
+.. |Virtual Server Components| image:: http://github.com/ZCA/ZenPacks.community.f5/raw/master/screenshots/zenoss_bigip_vs_component.png
+.. |Node Components| image:: http://github.com/ZCA/ZenPacks.community.f5/raw/master/screenshots/zenoss_big_node_component.png
+.. |Pool Components| image:: http://github.com/ZCA/ZenPacks.community.f5/raw/master/screenshots/zenoss_big_pool_component.png
