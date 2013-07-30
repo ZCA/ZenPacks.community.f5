@@ -52,7 +52,7 @@ Requirements
     
 Change History
 ==============
-See the `Change Log <https://github.com/ZCA/ZenPacks.community.f5/blob/master/README.rst>`_
+See the `Change Log <https://github.com/ZCA/ZenPacks.community.f5/blob/master/CHANGELOG.rst>`_
 for a detailed change history
 
 Known Issues
