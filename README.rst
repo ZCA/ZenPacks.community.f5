@@ -12,8 +12,8 @@ Provides basic F5 BIG-IP monitoring and trending.
 Additional Documentation
 ========================
 Additional documentation including download links and installation instructions
-can be found on
-`this ZenPack's page on the Zenoss community Wiki <http://wiki.zenoss.org/ZenPack:F5_BIG-IP_(Open_Source)>`_
+can be found on this ZenPack's page on the 
+`Zenoss Community Wiki <http://wiki.zenoss.org/ZenPack:F5_BIG-IP_(Open_Source)>`_
 
 
 Components
