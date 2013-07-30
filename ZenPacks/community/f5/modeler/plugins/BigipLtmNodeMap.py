@@ -9,8 +9,8 @@ from Products.DataCollector.plugins.CollectorPlugin import SnmpPlugin, GetTableM
 from Products.DataCollector.plugins.DataMaps import ObjectMap
 import re
 
-from BigIpUtils import unpack_address_to_string
-from BigIpUtils import avail_status_values, enable_state_values
+from ZenPacks.community.f5.lib.BigIpUtils import unpack_address_to_string
+from ZenPacks.community.f5.lib.BigIpUtils import avail_status_values, enable_state_values
 
 class BigipLtmNodeMap(SnmpPlugin):
     """

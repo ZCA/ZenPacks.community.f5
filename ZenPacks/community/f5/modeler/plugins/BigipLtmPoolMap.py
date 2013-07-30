@@ -8,7 +8,7 @@ Gather F5 LTM Pool Information
 from Products.DataCollector.plugins.CollectorPlugin import SnmpPlugin, GetTableMap, GetMap
 from Products.DataCollector.plugins.DataMaps import ObjectMap
 import re
-from BigIpUtils import avail_status_values, enable_state_values
+from ZenPacks.community.f5.lib.BigIpUtils import avail_status_values, enable_state_values
 
 class BigipLtmPoolMap(SnmpPlugin):
     """
