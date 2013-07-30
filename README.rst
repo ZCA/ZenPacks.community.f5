@@ -13,7 +13,7 @@ Additional Documentation
 ========================
 Additional documentation including download links and installation instructions
 can be found on this ZenPack's page on the Zenoss community Wiki at 
-http://wiki.zenoss.org/ZenPack:F5_BIG-IP_(Open_Source)
+http://wiki.zenoss.org/ZenPack:F5_BIG-IP_(Open_Source\)
 
 Components
 ==========
