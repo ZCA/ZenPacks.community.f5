@@ -109,33 +109,9 @@ Known Issues
   the state of the virtual server on the LTM
 
 
-
-Screenshots
-===========
-Device Details
---------------
-|Device Details|
-
-Virtual Server Components
--------------------------
-|Virtual Server Components|
-
-Node Components
----------------
-|Node Components|
-
-Pool Components
----------------
-|Pool Components|
-
 .. External References Below. Nothing Below This Line Should Be Rendered
 
 .. _Route Domains: http://devcentral.f5.com/Tutorials/TechTips/tabid/63/articleType/ArticleView/articleId/353/v10--A-Look-at-Route-Domains.aspx
-
-.. |Device Details| image:: http://github.com/ZCA/ZenPacks.community.f5/raw/master/screenshots/zenoss_bigip_DeviceDetails.png
-.. |Virtual Server Components| image:: http://github.com/ZCA/ZenPacks.community.f5/raw/master/screenshots/zenoss_bigip_vs_component.png
-.. |Node Components| image:: http://github.com/ZCA/ZenPacks.community.f5/raw/master/screenshots/zenoss_big_node_component.png
-.. |Pool Components| image:: http://github.com/ZCA/ZenPacks.community.f5/raw/master/screenshots/zenoss_big_pool_component.png
 
 .. _Issue 3: https://github.com/ZCA/ZenPacks.community.f5/issues/4
 .. _Issue 4: https://github.com/ZCA/ZenPacks.community.f5/issues/4
