@@ -18,6 +18,10 @@
                  for=".BigipLtmNode.BigipLtmNode"
                  provides=".interfaces.IBigipLtmNodeInfo"
                  />
+        <adapter factory=".info.BigipLtmConnPoolProfileInfo"
+                 for=".BigipLtmConnPoolProfile.BigipLtmConnPoolProfile"
+                 provides=".interfaces.IBigipLtmConnPoolProfileInfo"
+                 />
                  
 
     </configure>

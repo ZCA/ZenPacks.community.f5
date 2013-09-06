@@ -31,6 +31,8 @@ class BigipLtm(Device):
                         'ZenPacks.community.f5.BigipLtmPool', 'Ltm')),
         ('LtmNodes', ToManyCont(ToOne,
                         'ZenPacks.community.f5.BigipLtmNode', 'Ltm')),
+        ('LtmConnPoolProfiles', ToManyCont(ToOne,
+                        'ZenPacks.community.f5.BigipLtmConnPoolProfile', 'Ltm')),
     )
     _properties = (
         {'id': 'sysProductBuild', 'type': 'string', 'mode': ''},

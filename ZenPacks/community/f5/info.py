@@ -34,3 +34,11 @@ class BigipVirtualServerInfo(ComponentInfo):
     VsStatusAvailState = ProxyProperty("VsStatusAvailState")
     VsStatusEnabledState = ProxyProperty("VsStatusEnabledState")
     VsStatusDetailReason = ProxyProperty("VsStatusDetailReason")
+
+class BigipLtmConnPoolProfileInfo(ComponentInfo):
+    implements(interfaces.IBigipLtmConnPoolProfileInfo)
+    
+    LtmConnPoolProfileMaxSize = ProxyProperty("LtmConnPoolProfileMaxSize")
+    LtmConnPoolProfileMaxAge = ProxyProperty("LtmConnPoolProfileMaxAge")
+    LtmConnPoolProfileMaxReuse = ProxyProperty("LtmConnPoolProfileMaxReuse")
+    LtmConnPoolProfileIdleTimeout = ProxyProperty("LtmConnPoolProfileIdleTimeout")

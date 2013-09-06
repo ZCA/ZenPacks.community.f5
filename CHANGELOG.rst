@@ -2,6 +2,10 @@
 ZenPacks.community.f5 Change Log
 ===========================
 
+* 1.8
+
+  * Initial support for OneConnect Profiles as a device component
+
 * 1.7
 
   * `Issue 3`_ - Properly detect model for Viprion B4300 as well as additional

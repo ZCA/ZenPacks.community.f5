@@ -38,3 +38,14 @@ class IBigipLtmNodeInfo(IComponentInfo):
     ltmNodeAddrStatusEnabledState = schema.Text(title=u"Enabled/Disabled", readonly=True, group='Details')
     ltmNodeAddrStatusAvailState = schema.Text(title=u"Availability Status", readonly=True, group='Details')
     ltmNodeAddrStatusDetailReason = schema.Text(title=u"Status Details", readonly=True, group='Details')
+
+
+class IBigipLtmConnPoolProfileInfo(IComponentInfo):
+    """
+    Info adapter for BigipLtmConnPoolProfile components.
+    """
+    name = schema.Text(title=u"Profile Name", readonly=True, group='Details')
+    LtmConnPoolProfileMaxSize = schema.Text(title=u"Max Size", readonly=True, group='Details')
+    LtmConnPoolProfileMaxAge = schema.Text(title=u"Max Age", readonly=True, group='Details')
+    LtmConnPoolProfileMaxReuse = schema.Text(title=u"Mas Reuses", readonly=True, group='Details')
+    LtmConnPoolProfileIdleTimeout = schema.Text(title=u"Idle Timeout", readonly=True, group='Details')
