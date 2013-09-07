@@ -16,6 +16,10 @@ PREV_ZENPACK_NAME = ""
 # Zenoss will not overwrite any changes you make below here.
 
 from setuptools import setup, find_packages
+from distutils.core import setup
+
+with open('README.rst') as file:
+    long_description = file.read()
 
 setup(
     # This ZenPack metadata should usually be edited with the Zenoss
@@ -25,6 +29,10 @@ setup(
     version = VERSION,
     author = AUTHOR,
     license = LICENSE,
+    long_description = long_description,
+    url = "https://github.com/ZCA/ZenPacks.community.f5",
+    author_email = "davidpetzel@gmail.com",
+    description = "Zenoss ZenPack that provides basic F5 BIG-IP monitoring and trending.",
     
     # This is the version spec which indicates what versions of Zenoss
     # this ZenPack is compatible with

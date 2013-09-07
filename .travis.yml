@@ -1,5 +1,9 @@
 language: python
 python:
-  - "2.7"
-  - "2.6"
-script:  python setup.py bdist_egg
+- '2.7'
+- '2.6'
+script: sh release.sh
+env:
+  global:
+  - secure: eMEyMsyun660r4YdyJ5h7sRsC0MmyA+TNnCzaTdDIda2QsRhlzhEPA8UAHKDeU09VZIspGQS0AgPJwvkM259+OlaDzSxgsZfSyO+ChjiSEqpJ+OtC4WwnspR+fuTYpBov4YlHOUWI5MEnl2+Zjuoy7a5iNb0GHp+440/WnFD27g=
+  - secure: V4qpw5xImf8FGNBBHisN9ItbwyGm5Gzs7DjPKGZuEKzJgjcQ6k77C60xTdctPhVsjoChYTBGL6ITj8F2N+D8L5jd4bZJOxrQlWR3xovnKgDVIgJWrLNYvB7T8FJ5HKDwD/Y3t8arKGGh3cbyBgKlh4u60DAbJaOgqQ1iQm7rnuw=
