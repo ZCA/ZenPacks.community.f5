@@ -13,34 +13,73 @@ Description
 Provides basic F5 BIG-IP monitoring and trending.
 
 
-Components
+Features
 ==========
-The ZenPack has the following:
 
-* /Network/f5 Device Class
-* A Device template which graphs many of the same performance stats as
-  would be seen in the Overview >> Performance section of the 10.x UI
-* Virtual Server Component Modeling
+Device Classes
+--------------
+A new device class located at **/Network/f5** will be added
 
-  * A component template for virtual servers.
-  * Virtual Server filtering. This pack adds a new zProperty,
-    **zF5BigipVirtualServerNameFilter**, which when set will limit which virtual
-    servers are included during a modeling cycle.
+Device Template
+---------------
+A Device template which graphs many of the same performance stats as would be 
+seen in the Overview >> Performance section of the 10.x UI
 
-* Node Component Modeling
+Component Templates
+-------------------
+Several new component templates will be added to the system. These templates 
+**should not** be bound manually to any devices. They will be automatically 
+bound to modeled components.
 
-  * A component template for nodes.
-  * Node filtering. This pack adds a new zProperty, **zF5BigipNodesNameFilter**, which when set will
-    limit which nodes are included during a modeling cycle.
+* Virtual Servers
+* Nodes
+* Pools
+* `OneConnect Profiles`_
 
-* Pool Component Modeling
+Modeler Plugins
+---------------
 
-  * A component template for Pools.
-  * Pool filtering. This pack adds a new zProperty, **zF5BigipPoolsNameFilter**, which when set will
-    limit which pools are included during a modeling cycle.
+Virtual Servers
++++++++++++++++
+A new modeler plugin **BigipLtmVirtualServerMap** will be added to the system 
+and automatically bound to the */Network/f5* device class. Filtering can
+be accomplished using the zF5BigipVirtualServerNameFilter zProperty discussed
+below.
+
+Nodes
++++++
+A new modeler plugin **BigipLtmNodeMap** will be added to the system 
+and automatically bound to the */Network/f5* device class. Filtering can
+be accomplished using the zF5BigipNodesNameFilter zProperty discussed
+below.
+
+Pools
++++++
+A new modeler plugin **BigipLtmPoolMap** will be added to the system 
+and automatically bound to the */Network/f5* device class. Filtering can
+be accomplished using the zF5BigipPoolsNameFilter zProperty discussed
+below.
+
+OneConnect Profiles
++++++++++++++++++++
+A new modeler plugin **BigipLtmConnPoolProfileMap** will be added to the system 
+and automatically bound to the */Network/f5* device class.
+
+zProperties
+-----------
+The following new zProperties will be added.
+
+* **zF5BigipVirtualServerNameFilter** - When set will limit which virtual
+  servers are included during a modeling cycle. The syntax should be any valid
+  Python regular expression.
+* **zF5BigipNodesNameFilter** - When set will limit which nodes are included during 
+  a modeling cycle. The syntax should be any valid Python regular expression.
+* **zF5BigipPoolsNameFilter** - When set will limit which pools are included during 
+  a modeling cycle. The syntax should be any valid Python regular expression.
 
 Requirements
 ============
+
 * Zenoss Versions Supported: 3.0+
 * External Dependencies: None
 * ZenPack Dependencies: None
@@ -52,7 +91,8 @@ Change Log
 
 * 1.8
 
-  * Initial support for OneConnect Profiles as a device component
+  * Initial support for `OneConnect Profiles`_ as a device component
+  * Initial integration with `Travis CI`_ (Laying groundwork for future testing)
 
 * 1.7
 
@@ -115,6 +155,8 @@ Known Issues
 .. External References Below. Nothing Below This Line Should Be Rendered
 
 .. _Route Domains: http://devcentral.f5.com/Tutorials/TechTips/tabid/63/articleType/ArticleView/articleId/353/v10--A-Look-at-Route-Domains.aspx
+.. _OneConnect Profiles: http://support.f5.com/kb/en-us/solutions/public/7000/200/sol7208.html
+.. _Travis CI: https://travis-ci.org/
 
 .. _Issue 3: https://github.com/ZCA/ZenPacks.community.f5/issues/4
 .. _Issue 4: https://github.com/ZCA/ZenPacks.community.f5/issues/4
