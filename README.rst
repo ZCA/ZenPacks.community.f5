@@ -2,6 +2,8 @@
 ZenPacks.community.f5
 =====================
 
+.. image:: https://travis-ci.org/ZCA/ZenPacks.community.f5.png?branch=master   :target: https://travis-ci.org/ZCA/ZenPacks.community.f5
+
 .. contents::
    :depth: 3
 
