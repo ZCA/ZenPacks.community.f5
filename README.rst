@@ -116,3 +116,5 @@ Known Issues
 
 .. _Route Domains: http://devcentral.f5.com/Tutorials/TechTips/tabid/63/articleType/ArticleView/articleId/353/v10--A-Look-at-Route-Domains.aspx
 
+.. _Issue 3: https://github.com/ZCA/ZenPacks.community.f5/issues/4
+.. _Issue 4: https://github.com/ZCA/ZenPacks.community.f5/issues/4
